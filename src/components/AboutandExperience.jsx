@@ -1,5 +1,6 @@
 import React from "react";
 import { FaAngleRight } from "react-icons/fa6";
+import webzene from "../assets/logo copy.png"
 import insta from "../assets/insta.webp";
 import linkedin from "../assets/linkedin.webp";
 import udemy from "../assets/Udemy-Logo.png";
@@ -7,9 +8,8 @@ import octanet from "../assets/octanet.jpeg";
 import bharat_intern from "../assets/bharat_intern.jpeg";
 import techplement from "../assets/techplement.jpeg";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
-import logoTh from "../assets/logo_townhouse.png";
 import logoRoomee from "../assets/logo_name.png";
 import logoCodetex from "../assets/logo_codetex.png";
 import { FaReact } from "react-icons/fa";
@@ -30,22 +30,23 @@ import { IoLogoFirebase } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { IoCall } from "react-icons/io5";
 import { FaLinkedin } from "react-icons/fa6";
-import { FaSquareInstagram } from "react-icons/fa6";
 import { FaAddressBook } from "react-icons/fa6";
 
 const AboutandExperience = () => {
+
+  const navigate = useNavigate()
   return (
     <div className="mt-20 w-full flex flex-col">
       <div className="flex flex-row">
         <div className="w-1/2 h-full p-5 justify-center">
           <div className="flex justify-between">
             <h1 className="text-3xl font-semibold">About Me</h1>
-            <Link className="flex items-center gap-1 text-blue-400 cursor-pointer hover:text-blue-600">
+            <Link to={'/about-me'} target="_blank" className="flex items-center gap-1 text-blue-400 cursor-pointer hover:text-blue-600">
               View More
               <FaArrowRightLong />
             </Link>
           </div>
-          <div className="mt-5 w-full h-full shadow-lg rounded-2xl bg-white p-10 pb-7">
+          <div className="mt-5 w-full h-full shadow-lg rounded-2xl bg-white p-16 pb-7">
             <p className="text-gray-600 leading-[25px] text-pretty text-justify w-full">
               Experienced Full Stack Developer with over 1.8 years of hands-on
               internship experience in MERN Stack, proficient in Node.js, and
@@ -57,7 +58,7 @@ const AboutandExperience = () => {
               acumen, and effective communication skills. Eagerly committed to
               staying ahead of the curve by embracing cutting-edge technologies.
             </p>
-            <button className="mt-5 flex items-center gap-1 p-3 border rounded-xl font-semibold text-blue-500 hover:translate-y-1 duration-300 ">
+            <button onClick={()=>navigate('/about-me')} className="mt-5 flex items-center gap-1 p-3 border rounded-xl font-semibold text-blue-500 hover:translate-y-1 duration-300 ">
               Read More
               <FaAngleRight />
             </button>
@@ -229,15 +230,15 @@ const AboutandExperience = () => {
 
             <div className="flex gap-5 items-center">
               <div className="w-1/5">
-                <img src={logoTh} alt="" />
+                <img src={webzene} alt="" />
               </div>
               <div className="flex flex-col gap-2 w-4/5">
                 <h1 className="text-xl font-semibold">
-                  Hotel Booking Web Application
+                  Blog Web Application
                 </h1>
                 <p className="font-medium text-gray-600">
-                  Townhouse is a hotel booking web application where user can
-                  rent other's property and also post there property for rent.
+                  Webzene is a blog web application where user can
+                  share blogs and view, comment on others posts. User can change there username and email too.
                 </p>
               </div>
             </div>
@@ -351,7 +352,6 @@ const AboutandExperience = () => {
       </div>
       {/* //!Skill Section Ends */}
 
-
       {/* //!Contact section Start */}
       <div className="flex flex-row mt-20">
         <div className="w-1/2 h-full p-5 justify-center">
@@ -360,60 +360,105 @@ const AboutandExperience = () => {
           </div>
           <div className="mt-5 w-full h-full shadow-lg rounded-2xl bg-white p-10 pb-7">
             <form className="flex flex-col gap-5">
-            <div className="flex items-center">
-            <label htmlFor="" className="w-1/6 font-bold ">Full Name</label>
-           <input type="text" required placeholder="Please Enter Your Name Here" id="name" name="name" className="p-5 outline-none border rounded-2xl w-5/6 font-semibold text-gray-600"/>
-            </div>
-            <div className="flex items-center">
-            <label htmlFor="" className="w-1/6 font-bold ">Mobile No.</label>
-           <input type="number" required  placeholder="Please Enter Your Mobile Number Here" id="name" name="name" className="p-5 outline-none border rounded-2xl w-5/6 font-semibold text-gray-600"/>
-            </div>
-            <div className="flex items-center">
-            <label htmlFor="email" className="w-1/6 font-bold ">Email Id</label>
-           <input type="email" required placeholder="Please Enter Your Email Here" id="email" name="email" className="p-5 outline-none border rounded-2xl w-5/6 font-semibold text-gray-600"/>
-            </div>
-            <div className="flex items-center">
-            <label htmlFor="purpose" className="w-1/6 font-bold ">Message</label>
-          
-           <textarea required name="purpose" id="purpose" cols="30" rows="5" className="p-5 outline-none border rounded-2xl w-5/6 font-semibold text-gray-600" placeholder="Please Enter Your Message Here"></textarea>
-            </div>
-            <div className="flex justify-center">
-            <button className="mt-5 flex items-center gap-1 p-3 border rounded-xl font-semibold text-blue-500 hover:translate-y-1 duration-300 ">
-              Submit
-              <FaAngleRight />
-            </button>
-            </div>
-            
+              <div className="flex items-center">
+                <label htmlFor="" className="w-1/6 font-bold ">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Please Enter Your Name Here"
+                  id="name"
+                  name="name"
+                  className="p-5 outline-none border rounded-2xl w-5/6 font-semibold text-gray-600"
+                />
+              </div>
+              <div className="flex items-center">
+                <label htmlFor="" className="w-1/6 font-bold ">
+                  Mobile No.
+                </label>
+                <input
+                  type="number"
+                  required
+                  placeholder="Please Enter Your Mobile Number Here"
+                  id="name"
+                  name="name"
+                  className="p-5 outline-none border rounded-2xl w-5/6 font-semibold text-gray-600"
+                />
+              </div>
+              <div className="flex items-center">
+                <label htmlFor="email" className="w-1/6 font-bold ">
+                  Email Id
+                </label>
+                <input
+                  type="email"
+                  required
+                  placeholder="Please Enter Your Email Here"
+                  id="email"
+                  name="email"
+                  className="p-5 outline-none border rounded-2xl w-5/6 font-semibold text-gray-600"
+                />
+              </div>
+              <div className="flex items-center">
+                <label htmlFor="purpose" className="w-1/6 font-bold ">
+                  Message
+                </label>
+
+                <textarea
+                  required
+                  name="purpose"
+                  id="purpose"
+                  cols="30"
+                  rows="5"
+                  className="p-5 outline-none border rounded-2xl w-5/6 font-semibold text-gray-600"
+                  placeholder="Please Enter Your Message Here"
+                ></textarea>
+              </div>
+              <div className="flex justify-center">
+                <button className="mt-5 flex items-center gap-1 p-3 border rounded-xl font-semibold text-blue-500 hover:translate-y-1 duration-300 ">
+                  Submit
+                  <FaAngleRight />
+                </button>
+              </div>
             </form>
           </div>
-          
         </div>
         <div className="w-1/2 h-full p-5">
           <div className="flex justify-between">
             <h1 className="text-3xl font-semibold">Contact Details</h1>
           </div>
           <div className="mt-5 w-full h-72 shadow-none rounded-2xl bg-white p-0 pb-7">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21409.55296664267!2d77.50436460396814!3d28.474503399700538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cea7b8e76ec31%3A0x25d218e7796434f4!2sAlpha%201%20Market!5e0!3m2!1sen!2sin!4v1706821764215!5m2!1sen!2sin"   allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" className="w-full  rounded-2xl shadow-xl h-72"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21409.55296664267!2d77.50436460396814!3d28.474503399700538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cea7b8e76ec31%3A0x25d218e7796434f4!2sAlpha%201%20Market!5e0!3m2!1sen!2sin!4v1706821764215!5m2!1sen!2sin"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              className="w-full  rounded-2xl shadow-xl h-72"
+            ></iframe>
           </div>
           <div className="mt-2 w-full h-72 shadow-lg rounded-2xl bg-white p-8 pb-7 flex flex-col gap-5 justify-center">
             <div className="flex items-center gap-5  font-semibold text-gray-600 hover:text-red-500 ">
-            <MdEmail size={30}/>
-            <h1>shuklapramendra99@gmail.com</h1>
+              <MdEmail size={30} />
+              <h1>shuklapramendra99@gmail.com</h1>
             </div>
             <div className="flex items-center gap-5  font-semibold text-gray-600 hover:text-green-600 ">
-            <IoCall size={30}/>
-            <h1>+91 7694889909 / +91 8319871531</h1>
+              <IoCall size={30} />
+              <h1>+91 7694889909 / +91 8319871531</h1>
             </div>
             <div className="flex items-center gap-5  font-semibold text-gray-600 hover:text-blue-600 cursor-pointer">
-            <FaLinkedin size={30}/>
-            <Link to={'https://www.linkedin.com/in/pramendra-shukla-11812a221/'} target="_blank">Pramendra Shukla</Link>
+              <FaLinkedin size={30} />
+              <Link
+                to={"https://www.linkedin.com/in/pramendra-shukla-11812a221/"}
+                target="_blank"
+              >
+                Pramendra Shukla
+              </Link>
             </div>
-            
+
             <div className="flex items-center gap-5 font-semibold text-gray-600 hover:text-black">
-            <FaAddressBook size={30}/>
-            <h1>C Block Alpha 1 Greater Noida, Uttar Pradesh, India</h1>
+              <FaAddressBook size={30} />
+              <h1>C Block Alpha 1 Greater Noida, Uttar Pradesh, India</h1>
             </div>
-          
           </div>
         </div>
       </div>
@@ -422,10 +467,5 @@ const AboutandExperience = () => {
   );
 };
 
-// import { MdEmail } from "react-icons/md";
-// import { IoCall } from "react-icons/io5";
-// import { FaLinkedin } from "react-icons/fa6";
-// import { FaSquareInstagram } from "react-icons/fa6";
-// import { FaAddressBook } from "react-icons/fa6";
 
 export default AboutandExperience;
