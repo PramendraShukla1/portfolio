@@ -14,7 +14,7 @@ const Footer = () => {
             <h1 className="text-3xl font-semibold">Contact Me</h1>
           </div>
           <div className="mt-5 w-full h-full shadow-lg rounded-2xl bg-white p-10 pb-7">
-            <form className="flex flex-col gap-5" netlify>
+            <form className="flex flex-col gap-5" netlify method="POST">
               <div className="flex items-center">
                 <label
                   htmlFor=""
@@ -82,7 +82,10 @@ const Footer = () => {
                 ></textarea>
               </div>
               <div className="flex justify-center">
-                <button className="mt-5 flex items-center gap-1 p-3 border rounded-xl font-semibold text-blue-500 hover:translate-y-1 duration-300 ">
+                <button
+                  className="mt-5 flex items-center gap-1 p-3 border rounded-xl font-semibold text-blue-500 hover:translate-y-1 duration-300 "
+                  type="submit"
+                >
                   Submit
                   <FaAngleRight />
                 </button>
